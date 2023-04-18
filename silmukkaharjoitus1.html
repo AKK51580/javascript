@@ -1,0 +1,83 @@
+<head>
+  <style>
+    body {
+      height: 100vh;
+      background: linear-gradient(to right bottom, #ff9797, #ffba7a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ensimmäinen {
+      display: inline-block;
+      overflow: hidden;
+      width: 110vw;
+      height: 30px;
+      background: linear-gradient(to right bottom, #b6ff7aa9, #ff7e7ea1);
+      position: absolute;
+      z-index: -1;
+      rotate: -40deg;
+    }
+    .toinen {
+      display: inline-block;
+      overflow: hidden;
+      width: 110vw;
+      height: 30px;
+      background: linear-gradient(to right bottom, #b6ff7aa9, #ff7e7ea1);
+      position: absolute;
+      z-index: -1;
+      rotate: 40deg;
+    }
+    div {
+      color: #427c12;
+      background: linear-gradient(to left top, #ffba7a, #ff9797);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 300px;
+      padding: 25px;
+      border-style: solid;
+      border-color: #ff7e7e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    p {
+      font-size: 20px;
+      font-weight: medium;
+    }
+  </style>
+</head>
+
+<span class="ensimmäinen"></span>
+<span class="toinen"></span>
+<div></div>
+
+<script>
+  // 1. luo lsta peleistä, 10kpl
+  // 2. tulosta listan elementit konsoliin jollain silmukalla
+  // 3. tulosta listan elementit html sivuun
+
+  const suosikkipelit = [
+    "Half-Life Alyx",
+    "Superhot VR",
+    "Far Cry 2",
+    "Zero Caliber",
+    "Beat the nightmare",
+    "A-tech cybernetic",
+    "Max Payne",
+    "Outlast",
+    "Outlast 2",
+  ];
+
+  for (let i = 0; i < suosikkipelit.length; i++) {
+    console.log(suosikkipelit[i]);
+  }
+
+  const gameListElement = document.querySelector("div");
+  for (let i = 0; i < suosikkipelit.length; i++) {
+    const gameName = suosikkipelit[i];
+    const gameElement = document.createElement("p");
+    gameElement.textContent = gameName;
+    gameListElement.appendChild(gameElement);
+  }
+</script>
