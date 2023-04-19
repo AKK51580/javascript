@@ -1,0 +1,50 @@
+<script>
+  // String eli merkkijono -tietotyyppi
+  let etunimi = "Erkki";
+  // primitiivit
+
+  // integreter, eli kokonaiskoko
+  let numero = 1982;
+  // float, eli "liukuluku", desimaaliluku
+  let desimaali = 5.03;
+  // boolean, eli boolean. Arvo on true tai false
+  let totuus = true;
+  let valhe = false;
+  // null, eli tyhjä
+  let tyhjä = null;
+  // undefined, eli määrittelemätön
+  let määrittelemätön = undefined;
+  // object eli objekti koostuu muista datatyypeistä
+  let game1 = {
+    name: "Skyrim",
+    genre: "RPG",
+    releaseYear: "2011",
+    URL: "https://elderscrolls.bethesda.net/en/skyrim",
+    image:
+      "https://cdn.segmentnextimages.com/wp-content/uploads/2011/11/skyrim-walkthrough.jpg",
+    score: 78,
+  };
+
+  let game2 = {
+    name: "Witcher 3",
+    genre: "RPG",
+    releaseYear: 2011,
+    URL: "https://www.thewitcher.com/us/en/witcher3",
+    image:
+      "https://image.api.playstation.com/vulcan/ap/rnd/202211/0711/kh4MUIuMmHlktOHar3lVl6rY.png",
+    score: 96,
+  };
+
+  let game3 = {
+    name: "Kingdom Come: Deliverance",
+    genre: "RPG",
+    releaseYear: 2011,
+    URL: "https://www.thewitcher.com/us/en/witcher4",
+  };
+
+  let games = [game1, game2, game3];
+
+  games.forEach((game) => {
+    console.log(game.name);
+  });
+</script>
