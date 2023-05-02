@@ -37,15 +37,19 @@ for (let i = 0; i < games.length; i++) {
   const gameDeveloper = "Developer: " + games[i].developer;
   const gameGenre = games[i].genre;
   const gameReleaseYear = games[i].releaseYear;
-  const gameURL = games[i].URL;
+  const gameLink = "Official Website"
   const gameImage = games[i].image;
+  const gameURL = games[i].URL;
   const gameScore = games[i].score;
+
+
 
   const onegameElements = document.createElement("div");
   onegameElements.classList.add("onegame");
 
   const gameNameElement = document.createElement("h2");
   gameNameElement.textContent = gameName;
+  gameNameElement.classList.add("game-name");
   onegameElements.appendChild(gameNameElement);
 
   const gameDeveloperElement = document.createElement("p");
@@ -60,18 +64,21 @@ for (let i = 0; i < games.length; i++) {
   gameReleaseYearElement.textContent = gameReleaseYear;
   onegameElements.appendChild(gameReleaseYearElement);
   
-  const gameURLElement = document.createElement("p");
-  gameURLElement.textContent = gameURL;
-  onegameElements.appendChild(gameURLElement);
-  
   const gameImageElement = document.createElement("img");
   gameImageElement.src = gameImage;
   onegameElements.appendChild(gameImageElement);
+
+  const gameLinkClassName = "game-link";
+  const gameURLElement = document.createElement("a");
+  gameURLElement.href = gameURL;
+  gameURLElement.textContent = gameLink;
+  gameURLElement.classList.add(gameLinkClassName);
+  onegameElements.appendChild(gameURLElement);
   
-const gameElement = document.createElement("p");
-gameElement.textContent = "Score";
+  const gameElement = document.createElement("p");
+  gameElement.textContent = "Score";
   gameElement.classList.add("text-score");
-onegameElements.appendChild(gameElement);
+  onegameElements.appendChild(gameElement);
 
   const gameScoreElement = document.createElement("p");
   gameScoreElement.textContent = gameScore;
