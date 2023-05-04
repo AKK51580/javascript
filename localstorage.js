@@ -96,16 +96,41 @@
   }
 
 
+
+
 function addGame() {
-    let newGame = {
-        name: document.getElementById("name").value,
-        developer: document.getElementById("developer").value,
-        genre: document.getElementById("genre").value,
-        releaseYear: document.getElementById("releaseyear").value,
-        URL: document.getElementById("url").value,
-        image: document.getElementById("image").value,
-        score: document.getElementById("score").value,
-    };
+  const nameInput = document.getElementById("name");
+  const developerInput = document.getElementById("developer");
+  const genreInput = document.getElementById("genre");
+  const releaseYearInput = document.getElementById("releaseyear");
+  const urlInput = document.getElementById("url");
+  const imageInput = document.getElementById("image");
+  const scoreInput = document.getElementById("score");
+
+  // check if any input fields are empty
+  if (
+    nameInput.value.trim() === "" ||
+    developerInput.value.trim() === "" ||
+    genreInput.value.trim() === "" ||
+    releaseYearInput.value.trim() === "" ||
+    urlInput.value.trim() === "" ||
+    imageInput.value.trim() === "" ||
+    scoreInput.value.trim() === ""
+  ) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  // create a new game object with the input values
+  const newGame = {
+    name: nameInput.value.trim(),
+    developer: developerInput.value.trim(),
+    genre: genreInput.value.trim(),
+    releaseYear: releaseYearInput.value.trim(),
+    URL: urlInput.value.trim(),
+    image: imageInput.value.trim(),
+    score: scoreInput.value.trim(),
+  };
 
     // get existing games from local storage or initialize an empty array
     let gamesParse = JSON.parse(localStorage.getItem("games"));
