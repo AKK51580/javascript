@@ -32,10 +32,15 @@
     },
   ];
 
+function resetGameData() {
+  localStorage.clear();
+  localStorage.setItem("games", gamesStringify);
+  location.reload();
+}
+
   let gameLink = "Official Website";
 
   let gamesStringify = JSON.stringify(games);
-  //localStorage.setItem("games", gamesStringify);
 
   let gamesParse = JSON.parse(localStorage.getItem("games"));
 
@@ -92,10 +97,21 @@
     gameScoreElement.classList.add("score");
     onegameElements.appendChild(gameScoreElement);
 
+const del = document.createElement("div");
+del.innerHTML = `<input type="button" value="Delete" onclick="deleteGame(${index})">`;
+onegameElements.appendChild(del);
+
+
     gameListElement.appendChild(onegameElements);
   }
 
+function deleteGame(gameIndex) {
+  games.splice(gameIndex, 1);
+  localStorage.clear();
+  localStorage.setItem("games", JSON.stringify(games));
+  location.reload();
 
+}
 
 
 function addGame() {
