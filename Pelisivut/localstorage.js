@@ -97,8 +97,8 @@ function resetGameData() {
     gameScoreElement.classList.add("score");
     onegameElements.appendChild(gameScoreElement);
 
-const del = document.createElement("div");
-del.innerHTML = `<input type="button" value="Delete" onclick="deleteGame(${index})">`;
+const del = document.createElement("span");
+del.innerHTML = `<input type="button" value="Delete" onclick="deleteGame()" class="ctrlBtn">`;
 onegameElements.appendChild(del);
 
 
@@ -113,6 +113,7 @@ function deleteGame(gameIndex) {
 
 }
 
+const addGameButton = document.querySelector(".add-game-button");
 
 function addGame() {
   const nameInput = document.getElementById("name");
@@ -124,18 +125,21 @@ function addGame() {
   const scoreInput = document.getElementById("score");
 
   // check if any input fields are empty
-  if (
-    nameInput.value.trim() === "" ||
-    developerInput.value.trim() === "" ||
-    genreInput.value.trim() === "" ||
-    releaseYearInput.value.trim() === "" ||
-    urlInput.value.trim() === "" ||
-    imageInput.value.trim() === "" ||
-    scoreInput.value.trim() === ""
-  ) {
-    alert("Please fill in all fields.");
-    return;
-  }
+if (
+  nameInput.value.trim() === "" ||
+  developerInput.value.trim() === "" ||
+  genreInput.value.trim() === "" ||
+  releaseYearInput.value.trim() === "" ||
+  urlInput.value.trim() === "" ||
+  imageInput.value.trim() === "" ||
+  scoreInput.value.trim() === ""
+) {
+  alert("Please fill in all fields.");
+  return;
+}
+
+
+
 
   // create a new game object with the input values
   const newGame = {
@@ -201,6 +205,10 @@ function addGame() {
     gameScoreElement.textContent = newGame.score;
     gameScoreElement.classList.add("score");
     onegameElements.appendChild(gameScoreElement);
+
+    const del = document.createElement("button");
+del.innerHTML = '<input type="button" value="Delete" onclick="deleteGame(${index})">';
+onegameElements.appendChild(del);
 
     gameListElement.appendChild(onegameElements);
 }

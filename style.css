@@ -136,3 +136,6 @@ input {
     min-width: 220px;
     margin: 5px;
 }
+.add-game-button {
+    position: relative;
+}

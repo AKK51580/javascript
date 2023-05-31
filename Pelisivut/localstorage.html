@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
     <div id="container"></div>
@@ -28,7 +28,12 @@
         <input type="url" placeholder="site url" id="url" />
         <input type="text" placeholder="image" id="image" />
         <input type="number" placeholder="score" id="score" />
-        <input type="button" value="add" onclick="addGame()" />
+        <input
+          type="button"
+          value="add"
+          class="add-game-button"
+          onclick="addGame()"
+        />
         <input type="submit" value="Reset Data" onclick="resetGameData()" />
       </form>
     </div>
